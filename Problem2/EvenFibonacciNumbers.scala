@@ -26,6 +26,6 @@ object EvenFibonacciNumbers {
   }
   
   def main(args: Array[String]) {
-    println(sumOfEvenFibonacci(1, 2, 4000000))
+    println(sumOfEvenFibonacci(1, 2, 4000000))//4613732
   }
 }

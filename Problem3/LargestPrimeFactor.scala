@@ -49,7 +49,7 @@ object LargestPrimeFactor {
   
   def main(args: Array[String]): Unit = {
     val now = System.nanoTime;
-    println("Answer: " + largestPrimeFactor(600851475143L));
+    println("Answer: " + largestPrimeFactor(600851475143L));//6857
     val micros = (System.nanoTime - now) / 1000;
     println("%d microseconds".format(micros));
   }
