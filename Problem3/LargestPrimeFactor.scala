@@ -43,7 +43,7 @@ object LargestPrimeFactor {
       testDivisable(a, b-1);   
   
   def largestPrimeFactor(a:Long): Long = {
-    val b = a/70; // Do a/100 to speed up process
+    val b = a/2; // Do a/100 or a/70 to speed up process
     testDivisable(a, b);
   }
   
