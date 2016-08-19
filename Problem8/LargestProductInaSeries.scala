@@ -5,11 +5,11 @@ object LargestProduct {
 
   @tailrec
   def getNumber(offset: Int, a: BigInt): BigInt = 
-    if(offset == 0) a%10 else getNumber(offset-1, (a/10)) 
+    if(offset == 0) a%10; else getNumber(offset-1, (a/10));
       
   @tailrec
   def makeNum(a: BigInt, offset:Int, crnt:Int, value:String): String =
-    if(crnt == 0) value
+    if(crnt == 0) value;
     else makeNum(a, offset, crnt-1, value + getNumber(offset+crnt, a).toString);
   
   @tailrec
@@ -17,7 +17,7 @@ object LargestProduct {
     @tailrec
     def getProductOf13(sum: BigInt, b: Int, offset: Int): BigInt = {
       val num = getNumber(offset+b, a);
-      if(b == 0) sum 
+      if(b == 0) sum;
       else getProductOf13(sum * num, b-1, offset);
     }
   
@@ -27,8 +27,8 @@ object LargestProduct {
       println("The 13 Numbers " + makeNum(a, highestOffset, 13, ""));
       println("Product: " + getProductOf13(1, 13, highestOffset)); 
     }  
-    else if(testNum > highest) findHighestProduct(a, testNum, offset, offset-1)
-    else findHighestProduct(a, highest, highestOffset, offset-1) 
+    else if(testNum > highest) findHighestProduct(a, testNum, offset, offset-1);
+    else findHighestProduct(a, highest, highestOffset, offset-1); 
   }
 
   def main(args: Array[String]) {
