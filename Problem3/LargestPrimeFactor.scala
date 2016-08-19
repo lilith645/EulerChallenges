@@ -22,10 +22,10 @@ import scala.annotation.tailrec
 
 object LargestPrimeFactor {  
   @tailrec
-  def modOdd(a: Long, b:Long, limit: Long): Long =
+  def isPrime(a: Long, b:Long, limit: Long): Long =
     if(b > limit) 1
     else if(a%b == 0) 0
-    else modOdd(a, b+2, limit);
+    else isPrime(a, b+2, limit);
   
   @tailrec
   def testDivisable(a:Long, b:Long): Long = 
@@ -35,7 +35,7 @@ object LargestPrimeFactor {
       println("factor: " + b); 
       if(b % 2 == 0)
         testDivisable(a, b-1);
-      else if(modOdd(b, 3, b/2) != 1)
+      else if(isPrime(b, 3, b/2) != 1)
         testDivisable(a, b-1);
       else
         b;
